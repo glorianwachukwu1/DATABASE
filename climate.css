@@ -39,7 +39,8 @@ body {
 }
 
 .white-text {
-    color: white;
+    color:#e0e0e0;
+
 }
 
 
@@ -55,7 +56,6 @@ body {
 }
 
 
-/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     body {
         font-size: 14px;
