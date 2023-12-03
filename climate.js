@@ -6,12 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchResultContainer = document.getElementById('searchResultContainer');
 
     getWeatherButton.addEventListener('click', function () {
-        // Toggle the visibility of the get weather result container
-        getWeatherResultContainer.style.display = getWeatherResultContainer.style.display === 'none' ? 'block' : 'none';
+               getWeatherResultContainer.style.display = getWeatherResultContainer.style.display === 'none' ? 'block' : 'none';
     });
 
     searchButton.addEventListener('click', function () {
-        // Toggle the visibility of the search result container
-        searchResultContainer.style.display = searchResultContainer.style.display === 'none' ? 'block' : 'none';
+                searchResultContainer.style.display = searchResultContainer.style.display === 'none' ? 'block' : 'none';
     });
 });
