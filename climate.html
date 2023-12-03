@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
 
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
@@ -9,250 +9,180 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="climate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" integrity="sha256-Aoz9Ql4p6LQQMmpdABWO46+5sMypOf2ZFjPgacjzj0A=" crossorigin="anonymous" />
-           <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <title>Climate Database</title>  
-</head>
+ </head>
 
-<body>
-
-<!-- nav bar -->
-<section>
-    <nav class="navbar navbar-dark custom-dark-bg">
-        <a class="navbar-brand" href="#">
-            <img src="./images/logo black_colour.png" alt="Climate logo" width="70" height="40" class="d-inline-block align-top" alt="">
-            Climate Database Interface
-        </a>
-    </nav>
-</section>
-
+ <body>
+    <!-- nav bar -->
+    <section>
+        <nav class="navbar navbar-dark custom-dark-bg">
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo black_colour.png" alt="Climate logo" width="70" height="40" class="d-inline-block align-top" alt="">
+                Climate Database Interface
+            </a>
+        </nav>
+    </section>
 
 
-<!—Weather Info starts here -->
-<section class="p-5">
-  <div class="container">
-    <div class="row gap-3">
-      
-      <div class="row col-lg-12 bg-dark d-flex align-items-center justify-content-around text-center rounded">
-        
-       <div class="col-md mb-4 mt-4">
-          <img src="./images/radiation.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
-          <p class="h6 text-light pt-3">Date</p>
-          <div class="text-warning">
-            <label for="dateRange">Year:</label>
-            <select id="endYear">
-                <option value="select">Year
-             </option>
-             <option value="2010">2010</option>
-             <option value="2011">2011</option>
-             <option value="2012">2012</option>
-             <option value="2013">2013</option>
-             <option value="2014">2014</option>
-             <option value="2015">2015</option>
-             <option value="2016">2016</option>
-             <option value="2017">2017</option>
-             <option value="2018">2018</option>
-             <option value="2019">2019</option>
-             <option value="2020">2020</option>
-             <option value="2021">2021</option>
-             <option value="2022">2022</option>
-             <option value="2023">2023</option>
-            </select>
 
-            &nbsp;
-                <label for="startYear">Month:</label>
-                   <select id="startYear">
-                       <option value="month">Month</option>
-                       <option value="January">January</option>
-                       <option value="February">February</option>
-                       <option value="March">March</option>
-                       <option value="April">April</option>
-                       <option value="May">May</option>
-                       <option value="June">June</option>
-                       <option value="July">July</option>
-                       <option value="August">August</option>
-                       <option value="September">September</option>
-                       <option value="October">October</option>
-                       <option value="November">November</option>
-                       <option value="December">December</option>
-                   </select>
-
-                   &nbsp;
-
-                   <label for="startYear">Day:</label>
-                   <select id="Day">
-                    <option value="Day">Day</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-
-               
-
-                
-              </div>
-        </div>
-
-
-            <div class="col-md mb-4 mt-4 ">
+    <!—Weather Info starts here -->
+    <section class="p-5">
+      <div class="container">
+        <div class="row gap-3">
+          
+          <div class="row col-lg-12 bg-dark d-flex align-items-center justify-content-around text-center rounded">
+            
+          <div class="col-md mb-4 mt-4">
               <img src="./images/world.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
               <p class="h6 text-light pt-3">Location</p>
               <div class="text-warning">
+                <label for="Location">Location:</label>
                 <select id="Locations">
-                    <option value="select">Location</option>
-                    <option value="Albany">Albany</option>
-                    <option value="Binghamton">Binghamton</option>
-                    <option value="Buffalo">Buffalo</option>
-                    <option value="Hempstead ">Hempstead </option>
-                    <option value="Mount Vernon">Mount Vernon</option>
-                    <option value="New Rochelle">New Rochelle</option>
-                    <option value="New York City">New York City</option>
-                    <option value="Rochester">Rochester</option>
-                    <option value="Schenectady">Schenectady</option>
-                    <option value="Syracuse">Syracuse</option>
-                    <option value="Troy">Troy</option>
-                    <option value="Utica">Utica</option>
-                    <option value="White Plains">White Plains</option>
-                    
-                </select>                      
-                    
-                    
+                  <option value="select">Location</option>
+                  <option value="Albany">Albany</option>
+                  <option value="Binghamton">Binghamton</option>
+                  <option value="Buffalo">Buffalo</option>
+                  <option value="Hempstead ">Hempstead </option>
+                  <option value="Mount Vernon">Mount Vernon</option>
+                  <option value="New Rochelle">New Rochelle</option>
+                  <option value="New York City">New York City</option>
+                  <option value="Rochester">Rochester</option>
+                  <option value="Schenectady">Schenectady</option>
+                  <option value="Syracuse">Syracuse</option>
+                  <option value="Troy">Troy</option>
+                  <option value="Utica">Utica</option>
+                  <option value="White Plains">White Plains</option>
+                </select>         
               </div>
             </div>
 
-              <div class="col-md mb-4  mt-4">
-                <img src="./images/location.jpg" class="img-fluid rounded-circle" width="200" height="200">
-                <p class="h6 text-light pt-3">Weather</p>
-                <div class="text-warning">
+
+                <div class="col-md mb-4 mt-4 ">
+                  <img src="./images/radiation.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
+                  <p class="h6 text-light pt-3">Solar radiation</p>
+                  <div class="text-warning">
                     <select id="Search Weather">
-                          <option value="Search weather">Weather</option>
-                      </select>
-                    </div>
-                </div>
-              </div>
-    </div>
-  </div>
-</section>
-<!--Weather info ends here -->
-
-
-
-  <!-- Display Weather Result -->
-<section class="p-5 text-center">
-  <div class="Result-container">
-         <button placeholder="getWeather" id="add">Get Weather</button>
-    </div>
-</section>
-   
- 
-
-
-
-
-
-
-
-
-<!—Search here -->
-
-<section class="p-5">
-  <div class="container mx-auto">
-      <div class="row justify-content-center"> <!-- Center the row -->
-          <div class="col-lg-8 bg-dark d-flex align-items-center justify-content-around text-center rounded">
-              <div class="col-md d-flex bg-warning align-items-center text-center my-3 p-5">
-                  <div class="input-group">
-                      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                      <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
-                  </div>
-              </div>
-
-              <div class="col-md mb-4 mt-4 ">
-                  <section class="p-5 text-center">
-                      <div class="Result-container">
+                      <option value="Solar radiation">Solar radiation</option>
+                  </select>                  
                         
-                          <!-- The result content will be displayed here -->
+                        
+                  </div>
+                </div>
+
+                  <div class="col-md mb-4  mt-4">
+                    <img src="./images/location.jpg" class="img-fluid rounded-circle" width="200" height="200">
+                    <p class="h6 text-light pt-3">Weather</p>
+                    <div class="text-warning">
+                        <select id="Search Weather">
+                              <option value="Search weather">Weather</option>
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+
+        </div>
+      </div>
+    </section>
+    <!--Weather info ends here -->
+
+
+      <!-- Display Weather Result -->
+    <section class="p-3 text-center">
+      <button placeholder="getWeather" id="add">Get Weather</button>
+      <div class="Result-container white-text" id="getWeatherResultContainer"> 
+        <!-- Result content for Get Weather button will be displayed here -->
+          <br>
+      <p>Weather: Sunny</p>
+      <p>Temperature: 25°C</p>
+      <p>Humidity: 60%</p>
+    </div>
+    </section>
+
+
+
+    <!-- Search here -->
+    <section class="p-5">
+      <div class="container mx-auto">
+          <div class="row justify-content-center"> <!-- Center the row -->
+              <div class="col-lg-8 bg-dark d-flex align-items-center justify-content-around text-center rounded">
+                  <div class="col-md d-flex bg-warning align-items-center text-center my-3 p-5">
+                      <div class="input-group">
+                          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                          <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
                       </div>
-                  </section>
+                  </div>
+
+                  <div class="col-md mb-4 mt-4 ">
+                      <section class="p-5 text-center">
+                          <div class="Result-container white-text" id="searchResultContainer">
+                              <!-- The result content will be displayed here -->
+                              <p>Weather: Sunny</p>
+                              <p>Temperature: 25°C</p>
+                              <p>Humidity: 60%</p>
+
+                          </div>
+                      </section>
+                  </div>            
               </div>
           </div>
       </div>
-  </div>
-</section>
+    </section>
+
+
+      <!-- Map starts -->
+      <section class="pb-5">
+          <div class="container">
+              <div class="row justify-content-center"> <!-- Added row class -->
+                  <div id='map' style='width: 100%; height: 65vh;' class="col-md-10"></div>
+              </div>
+          </div>
+      </section>
+      <!-- Map ends -->
 
 
 
+      <!-- Footer section ends here -->
+      <section class="p-3 bg-dark">
+          <div class="container">
+            <div class="d-flex align-items-center justify-content-around">
+              <div class="text-light d-flex row">
+                <p>  &copy; 2023 Gloria, Patrick, Harris - <a href="" class="link-warning link-underline-opacity-0">Database Course </a> </p></div>
+              <div class="text-warning">
+                <i class="bi bi-facebook"></i> &nbsp;
+                <i class="bi bi-twitter"></i> &nbsp;
+                <i class="bi bi-instagram"></i> &nbsp;
+                <i class="bi bi-whatsapp"></i> &nbsp;
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Footer section ends here -->
+        
+         <!-- Map continues -->
+        <script>
+            mapboxgl.accessToken = "pk.eyJ1IjoiZ2xvcmlhbndhY2h1a3d1IiwiYSI6ImNscDZmczBwcjBkMjIyamx2amtidXE1NTUifQ.P9e6UJszfCM4zCM_r8-Y7Q";
+            var map = new mapboxgl.Map({
+                container: "map",
+                style: "mapbox://styles/mapbox/streets-v11",
+                zoom: 3,
+                center: [-74.2179,43.2994]
+            });
+            // Add Navigation Control
+            map.addControl(new mapboxgl.NavigationControl());
+            // Custom Zoom Functions
+            function zoomIn() {
+                map.zoomIn();
+            }
+            function zoomOut() {
+                map.zoomOut();
+            }
+        </script>
 
-
-
-
-
-<!-- Map starts -->
-<section class="pb-5">
-    <div class="container">
-        <div class="row justify-content-center"> <!-- Added row class -->
-            <div id='map' style='width: 100%; height: 65vh;' class="col-md-10"></div>
-        </div>
-    </div>
-</section>
-<!-- Map ends -->
-
-
-
-<!-- Footer section ends here -->
-<section class="p-3 bg-dark">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-around">
-        <div class="text-light d-flex row">
-          <p>  &copy; 2023 Gloria, Patrick, Harris - <a href="" class="link-warning link-underline-opacity-0">Database Course </a> </p></div>
-        <div class="text-warning">
-          <i class="bi bi-facebook"></i> &nbsp;
-          <i class="bi bi-twitter"></i> &nbsp;
-          <i class="bi bi-instagram"></i> &nbsp;
-          <i class="bi bi-whatsapp"></i> &nbsp;
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Footer section ends here -->
-  
-
-
-
-   <script>
-      mapboxgl.accessToken = "pk.eyJ1IjoiZ2xvcmlhbndhY2h1a3d1IiwiYSI6ImNscDZmczBwcjBkMjIyamx2amtidXE1NTUifQ.P9e6UJszfCM4zCM_r8-Y7Q";
-      var map = new mapboxgl.Map({
-          container: "map",
-          style: "mapbox://styles/mapbox/streets-v11",
-          zoom: 3,
-          center: [-74.2179,43.2994]
-      });
-
-      // Add Navigation Control
-      map.addControl(new mapboxgl.NavigationControl());
-
-      // Custom Zoom Functions
-      function zoomIn() {
-          map.zoomIn();
-      }
-
-      function zoomOut() {
-          map.zoomOut();
-      }
-   </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-
-    <script src="climate.js"></script>
-</body>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+          crossorigin="anonymous"></script>
+          <script src="climate.js"></script>
+  </body>
 </html>
 
