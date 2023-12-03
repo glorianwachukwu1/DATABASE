@@ -32,14 +32,14 @@
       <div class="container">
         <div class="row gap-3">
           
-          <div class="row col-lg-12 bg-dark d-flex align-items-center justify-content-around text-center rounded">
+         <div class="row col-lg-12 bg-dark d-flex align-items-center justify-content-around text-center rounded">
             
-          <div class="col-md mb-4 mt-4">
-              <img src="./images/world.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
-              <p class="h6 text-light pt-3">Location</p>
+           <div class="col-md mb-1 mt-4 ">
+            <img src="./images/resultt.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
+            <p class="h6 text-light pt-3">Location</p>
               <div class="text-warning">
-                <label for="location">Location:</label>
-                <select id="location">
+                <label for="Location">Location:</label>
+                <select id="Locations">
                   <option value="select">Location</option>
                   <option value="Albany">Albany</option>
                   <option value="Binghamton">Binghamton</option>
@@ -61,24 +61,43 @@
 
                 <div class="col-md mb-4 mt-4 ">
                   <img src="./images/radiation.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
-                  <p class="h6 text-light pt-3">Solar radiation</p>
+                  <p class="h6 text-light pt-3">Weather</p>
                   <div class="text-warning">
                     <select id="location">
-                      <option value="Solar radiation">Solar radiation</option>
-                  </select>                  
-                        
+                       <option value="Humidity">Humidity</option>
+                        <option value="Temperature">Temperature</option>
+                        <option value="Windspeed">Windspeed</option>
+                      </select>
+                      
+
+                  &nbsp;
+
+                  <label for="startYear">Stats:</label>
+                  <select id="Day">
+                   <option value="Stats">Stats</option>
+                   <option value="Minumum">Minumum</option>
+                   <option value="Maximum">Maximum</option>
+                   <option value="Average">Average</option>
+                   </select> 
                         
                   </div>
                 </div>
 
                   <div class="col-md mb-4  mt-4">
                     <img src="./images/location.jpg" class="img-fluid rounded-circle" width="200" height="200">
-                    <p class="h6 text-light pt-3">Weather</p>
+                    <p class="h6 text-light pt-3">Date</p>
                     <div class="text-warning">
-                        <select id="location">
-                              <option value="Weather">Weather</option>
-                          </select>
-                        </div>
+                      <label for="dateRange">Date:</label>
+                      <select id="endYear">
+                          <option value="select">Date
+                       </option>
+                       <option value="Daily">Daily</option>
+                       <option value="Hourly">Hourly</option>
+                       <option value="Yearly">Yearly</option>
+                      </select>
+
+                 
+
                     </div>
                   </div>
 
