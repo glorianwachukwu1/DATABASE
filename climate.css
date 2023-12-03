@@ -21,8 +21,8 @@ body {
 
 
 .custom-dark-bg {
-    background-color: #33333366; /* Replace #333 with your desired dark color */
-    color: #fff; /* Set text color to white or another contrasting color */
+    background-color: #33333366; 
+    color: #fff; 
 }
 
 .Location-container,
@@ -38,9 +38,20 @@ body {
     color: #ffffff;
 }
 
+.white-text {
+    color: white;
+}
+
+
 #map {
-    border: 2px solid #9c8f8f; /* Add a border */
-    margin: 10px; /* Add margin around the map */
+    border: 2px solid #9c8f8f; 
+    margin: 10px; 
+}
+
+
+
+.result-container {
+    display: none;
 }
 
 
@@ -49,5 +60,5 @@ body {
     body {
         font-size: 14px;
     }
-    /* Add additional responsive styles as needed */
+   
 }
