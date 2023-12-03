@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="climate.css">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" integrity="sha256-Aoz9Ql4p6LQQMmpdABWO46+5sMypOf2ZFjPgacjzj0A=" crossorigin="anonymous" />
+           <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <title>Climate Database</title>  
 </head>
 
@@ -35,134 +36,108 @@
         
        <div class="col-md mb-4 mt-4">
           <img src="./images/radiation.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
-          <p class="h6 text-light pt-3">Solar Radiation</p>
+          <p class="h6 text-light pt-3">Date</p>
           <div class="text-warning">
-                <label for="startYear">Start Year:</label>
+            <label for="dateRange">Year:</label>
+            <select id="endYear">
+                <option value="select">Year
+             </option>
+             <option value="2010">2010</option>
+             <option value="2011">2011</option>
+             <option value="2012">2012</option>
+             <option value="2013">2013</option>
+             <option value="2014">2014</option>
+             <option value="2015">2015</option>
+             <option value="2016">2016</option>
+             <option value="2017">2017</option>
+             <option value="2018">2018</option>
+             <option value="2019">2019</option>
+             <option value="2020">2020</option>
+             <option value="2021">2021</option>
+             <option value="2022">2022</option>
+             <option value="2023">2023</option>
+            </select>
+
+            &nbsp;
+                <label for="startYear">Month:</label>
                    <select id="startYear">
-                       <option value="select">Start date</option>
-                       <option value="2010">2010</option>
-                       <option value="2011">2011</option>
-                       <option value="2012">2012</option>
-                       <option value="2013">2013</option>
-                       <option value="2014">2014</option>
-                       <option value="2015">2015</option>
-                       <option value="2016">2016</option>
-                       <option value="2017">2017</option>
-                       <option value="2018">2018</option>
-                       <option value="2019">2019</option>
-                       <option value="2020">2020</option>
-                       <option value="2021">2021</option>
-                       <option value="2022">2022</option>
-                       <option value="2023">2023</option>
+                       <option value="month">Month</option>
+                       <option value="January">January</option>
+                       <option value="February">February</option>
+                       <option value="March">March</option>
+                       <option value="April">April</option>
+                       <option value="May">May</option>
+                       <option value="June">June</option>
+                       <option value="July">July</option>
+                       <option value="August">August</option>
+                       <option value="September">September</option>
+                       <option value="October">October</option>
+                       <option value="November">November</option>
+                       <option value="December">December</option>
                    </select>
 
                    &nbsp;
 
-                <label for="dateRange">End Year:</label>
-                    <select id="endYear">
-                        <option value="select">End date
-                     </option>
-                     <option value="2010">2010</option>
-                     <option value="2011">2011</option>
-                     <option value="2012">2012</option>
-                     <option value="2013">2013</option>
-                     <option value="2014">2014</option>
-                     <option value="2015">2015</option>
-                     <option value="2016">2016</option>
-                     <option value="2017">2017</option>
-                     <option value="2018">2018</option>
-                     <option value="2019">2019</option>
-                     <option value="2020">2020</option>
-                     <option value="2021">2021</option>
-                     <option value="2022">2022</option>
-                     <option value="2023">2023</option>
-                    </select>
-                        
-          </div>
+                   <label for="startYear">Day:</label>
+                   <select id="Day">
+                    <option value="Day">Day</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+
+               
+
+                
+              </div>
         </div>
 
 
-        <div class="col-md mb-4  mt-4">
-            <img src="./images/location.jpg" class="img-fluid rounded-circle" width="200" height="200">
-            <p class="h6 text-light pt-3">Weather</p>
-            <div class="text-warning">
-          <select id="Weather">
-                      <option value="select">Select</option>
-                      <option value="Humidity">Humidity</option>
-                      <option value="Temperature">Temperature</option>
-                      <option value="Windspeed">Windspeed</option>
-                  </select>
+            <div class="col-md mb-4 mt-4 ">
+              <img src="./images/world.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
+              <p class="h6 text-light pt-3">Location</p>
+              <div class="text-warning">
+                <select id="Locations">
+                    <option value="select">Location</option>
+                    <option value="Albany">Albany</option>
+                    <option value="Binghamton">Binghamton</option>
+                    <option value="Buffalo">Buffalo</option>
+                    <option value="Hempstead ">Hempstead </option>
+                    <option value="Mount Vernon">Mount Vernon</option>
+                    <option value="New Rochelle">New Rochelle</option>
+                    <option value="New York City">New York City</option>
+                    <option value="Rochester">Rochester</option>
+                    <option value="Schenectady">Schenectady</option>
+                    <option value="Syracuse">Syracuse</option>
+                    <option value="Troy">Troy</option>
+                    <option value="Utica">Utica</option>
+                    <option value="White Plains">White Plains</option>
+                    
+                </select>                      
+                    
+                    
+              </div>
             </div>
-          </div>
-  
 
-
-
-
-        <div class="col-md mb-4 mt-4 ">
-          <img src="./images/world.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
-          <p class="h6 text-light pt-3">Location</p>
-          <div class="text-warning">
-            <select id="Locations">
-                 <option value="select">Location</option>
-                 <option value="Alabama">Alabama</option>
-                 <option value="Alaska ">Alaska </option>
-                 <option value="Arizona">Arizona</option>
-                 <option value="Arkansas ">Arkansas </option>
-                 <option value="California ">California </option>
-                 <option value="Connecticut">Connecticut</option>
-                 <option value=" Delaware"> Delaware</option>
-                 <option value="Florida">Florida</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Hawaii">Hawaii</option>
-                <option value="Idaho">Idaho</option>
-                <option value="Illinois">Illinois</option>
-                <option value="Indiana">Indiana</option>
-                <option value="Iowa">Iowa</option>
-                <option value="Kansas">Kansas</option>
-                <option value="Kentucky">Kentucky</option>
-                <option value="Louisiana">Louisiana</option>
-                <option value="Maine">Maine</option>
-                <option value="Maryland">Maryland</option>
-                <option value="Massachusetts">Massachusetts</option>
-                <option value="Michigan">Michigan</option>
-                <option value="Minnesota">Minnesota</option>
-                <option value="Mississippi">Mississippi</option>
-                <option value="Missouri">Missouri</option>
-                <option value="Montana">Montana</option>
-                <option value="Nebraska">Nebraska</option>
-                <option value="Nevada">Nevada</option>
-                <option value="New Hampshire">New Hampshire</option>
-                <option value="New Jersey">New Jersey</option>
-                <option value="New Mexico">New Mexico</option>
-                <option value="New York">New York</option>
-                <option value="North Carolina">North Carolina</option>
-                <option value="North Dakota">North Dakota</option>
-                <option value="Ohio">Ohio</option>
-                <option value="Oklahoma">Oklahoma</option>
-                <option value="Oregon">Oregon</option>
-                <option value="Pennsylvania">Pennsylvania</option>
-                <option value="Rhode Island">Rhode Island</option>
-                <option value="South Carolina">South Carolina</option>
-                <option value="South Dakota">South Dakota</option>
-                <option value="Tennessee">Tennessee</option>
-                <option value="Texas">Texas</option>
-                <option value="Utah">Utah</option>
-                <option value="Vermont">Vermont</option>
-                <option value="Virginia">Virginia</option>
-                <option value="Washington">Washington</option>
-                <option value="West Virginia">West Virginia</option>
-                <option value="Wisconsin">Wisconsin</option>
-                <option value="Wyoming">Wyoming</option>
-            </select>                      
-                 
-                  &nbsp;
-
-                <label for="ZipCode">ZipCode</label>
-                <input type="number" id = "Zip Code" name="Zip Code">
-
-          </div>
-        </div>
+              <div class="col-md mb-4  mt-4">
+                <img src="./images/location.jpg" class="img-fluid rounded-circle" width="200" height="200">
+                <p class="h6 text-light pt-3">Weather</p>
+                <div class="text-warning">
+                    <select id="Search Weather">
+                          <option value="Search weather">Weather</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
     </div>
   </div>
 </section>
@@ -173,11 +148,51 @@
   <!-- Display Weather Result -->
 <section class="p-5 text-center">
   <div class="Result-container">
-      <button placeholder="getWeather" id="add">Get Weather</button>
-  </div>
+         <button placeholder="getWeather" id="add">Get Weather</button>
+    </div>
 </section>
    
  
+
+
+
+
+
+
+
+
+<!—Search here -->
+
+<section class="p-5">
+  <div class="container mx-auto">
+      <div class="row justify-content-center"> <!-- Center the row -->
+          <div class="col-lg-8 bg-dark d-flex align-items-center justify-content-around text-center rounded">
+              <div class="col-md d-flex bg-warning align-items-center text-center my-3 p-5">
+                  <div class="input-group">
+                      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                      <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
+                  </div>
+              </div>
+
+              <div class="col-md mb-4 mt-4 ">
+                  <section class="p-5 text-center">
+                      <div class="Result-container">
+                        
+                          <!-- The result content will be displayed here -->
+                      </div>
+                  </section>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
 <!-- Map starts -->
 <section class="pb-5">
@@ -196,7 +211,7 @@
     <div class="container">
       <div class="d-flex align-items-center justify-content-around">
         <div class="text-light d-flex row">
-          <p>  &copy; 2023, Gloria, Partrick, Harris <a href="" class="link-warning link-underline-opacity-0">Database Course </a> </p></div>
+          <p>  &copy; 2023 Gloria, Patrick, Harris - <a href="" class="link-warning link-underline-opacity-0">Database Course </a> </p></div>
         <div class="text-warning">
           <i class="bi bi-facebook"></i> &nbsp;
           <i class="bi bi-twitter"></i> &nbsp;
@@ -217,7 +232,7 @@
           container: "map",
           style: "mapbox://styles/mapbox/streets-v11",
           zoom: 3,
-          center: [-98.5795, 39.8283]
+          center: [-74.2179,43.2994]
       });
 
       // Add Navigation Control
