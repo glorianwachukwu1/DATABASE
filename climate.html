@@ -7,10 +7,8 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="climate.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" integrity="sha256-Aoz9Ql4p6LQQMmpdABWO46+5sMypOf2ZFjPgacjzj0A=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="climate.css"> 
     
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <title>Climate Database</title>  
  </head>
 
@@ -38,9 +36,8 @@
             <img src="./images/resultt.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
             <p class="h6 text-light pt-3">Location</p>
               <div class="text-warning">
-                <label for="Location">Location:</label>
-                <select id="Locations">
-                  <option value="select">Location</option>
+                 <select id="city-dropdown">
+                  <option value="select">Select Cities</option>
                   <option value="Albany">Albany</option>
                   <option value="Binghamton">Binghamton</option>
                   <option value="Buffalo">Buffalo</option>
@@ -54,53 +51,84 @@
                   <option value="Troy">Troy</option>
                   <option value="Utica">Utica</option>
                   <option value="White Plains">White Plains</option>
-                </select>         
-              </div>
+                </select>        
+                
+                              </div>
             </div>
 
 
                 <div class="col-md mb-4 mt-4 ">
-                  <img src="./images/radiation.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
+                  <img src="./images/radiation.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
                   <p class="h6 text-light pt-3">Weather</p>
                   <div class="text-warning">
-                    <select id="location">
-                       <option value="Humidity">Humidity</option>
-                        <option value="Temperature">Temperature</option>
-                        <option value="Windspeed">Windspeed</option>
-                      </select>
-                      
+                    <label for="startYear">Stats:</label>
+                    <select id="Day">
+                     <option value="Select">Select</option>
+                     <option value="Minumum">Minumum</option>
+                     <option value="Maximum">Maximum</option>
+                     <option value="Average">Average</option>
+                     </select> 
+                          
+                    </div>
 
-                  &nbsp;
+                    
+                    <label class="white-text">
+                      <input type="checkbox" value="Humidity" id="humidity-checkbox"> Humidity
+                  </label>
+                  <label class="white-text">
+                      <input type="checkbox" value="Temperature" id="temperature-checkbox"> Temperature
+                  </label>
+                  <br>
+                  <label class="white-text">
+                      <input type="checkbox" value="Windspeed" id="windspeed-checkbox"> Windspeed
+                  </label>
+                  
+                  <label class="white-text">
+                      <input type="checkbox" value="Solarradiance" id="solarradiance-checkbox"> Solar radiance
+                  </label>
+                                        
+                  <label class="white-text">
+                    <input type="checkbox" value="Precipitation" id="Precipitation"> Precipitation
+                </label>  
+                              
 
-                  <label for="startYear">Stats:</label>
-                  <select id="Day">
-                   <option value="Stats">Stats</option>
-                   <option value="Minumum">Minumum</option>
-                   <option value="Maximum">Maximum</option>
-                   <option value="Average">Average</option>
-                   </select> 
-                        
-                  </div>
-                </div>
+                 
+                 </div>
 
                   <div class="col-md mb-4  mt-4">
                     <img src="./images/location.jpg" class="img-fluid rounded-circle" width="200" height="200">
-                    <p class="h6 text-light pt-3">Date</p>
+                    <p class="h6 text-light pt-3">Data range</p>
                     <div class="text-warning">
-                      <label for="dateRange">Date:</label>
-                      <select id="endYear">
-                          <option value="select">Date
-                       </option>
-                       <option value="Daily">Daily</option>
-                       <option value="Hourly">Hourly</option>
+                       <select id="Date" onchange="updateYearDropdown()">
+                       <option value="Monthly">Monthly</option>
                        <option value="Yearly">Yearly</option>
+
+
                       </select>
+                      <select id="monthly-dropdown"style="display:none;">
+                        <option value="select">select</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                      
+                      </select>        
 
-                 
-
+                      <!--  div for the year dropdown -->
+                      <div id="yearDropdownContainer"></div>
+                      <div id="dateRangeDropdownContainer"></div>
                     </div>
                   </div>
 
+
+
+
+
+                  
         </div>
       </div>
     </section>
@@ -112,54 +140,27 @@
       <button placeholder="getWeather" id="add">Get Weather</button>
       <div class="Result-container white-text" id="getWeatherResultContainer"> 
         <!-- Result content for Get Weather button will be displayed here -->
-          <br>
-      <p>Weather: Cloudy 🌦️</p>
-      <p>Humidity: 60%🌧️</p>
-      <p>Temperature: 25°C⛅</p>
-      <p>Windspeed: 5mph🌩️</p>
+       
+        <table id="weather-table">
+          <thead>
+              <tr>
+                  <th>Date</th>
+                  <th>Temperature (°C)</th>
+                  <th>Wind Speed (m/s)</th>
+                  <th>Humidity (%)</th>
+                  <th>Precipitation (mm)</th>
+                  <th>Solar Irradiance (W/m²)</th>
+              </tr>
+          </thead>
+          <tbody id="weather-result"></tbody>
+      </table>
     </div>
     </section>
 
+ 
 
 
-    <!-- Search here -->
-    <section class="p-5">
-      <div class="container mx-auto">
-          <div class="row justify-content-center"> <!-- Center the row -->
-              <div class="col-lg-8 bg-dark d-flex align-items-center justify-content-around text-center rounded">
-                  <div class="col-md d-flex bg-warning align-items-center text-center my-3 p-5">
-                      <div class="input-group">
-                          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                          <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
-                      </div>
-                  </div>
-
-                  <div class="col-md mb-4 mt-4 ">
-                      <section class="p-5 text-center">
-                          <div class="Result-container white-text" id="searchResultContainer">
-                              <!-- The result content will be displayed here -->
-                              <p>Sunny 🌞</p>
-                              <p>Humidity: 60%🌧️</p>
-                              <p>Temperature: 25°C⛅</p>
-                              <p>Windspeed: 5mph🌩️</p>
-                            </div>
-                      </section>
-                  </div>            
-              </div>
-          </div>
-      </div>
-    </section>
-
-
-      <!-- Map starts -->
-      <section class="pb-5">
-          <div class="container">
-              <div class="row justify-content-center"> <!-- Added row class -->
-                  <div id='map' style='width: 100%; height: 65vh;' class="col-md-10"></div>
-              </div>
-          </div>
-      </section>
-      <!-- Map ends -->
+    
 
 
 
@@ -180,25 +181,7 @@
         </section>
         <!-- Footer section ends here -->
         
-         <!-- Map continues -->
-        <script>
-            mapboxgl.accessToken = "pk.eyJ1IjoiZ2xvcmlhbndhY2h1a3d1IiwiYSI6ImNscDZmczBwcjBkMjIyamx2amtidXE1NTUifQ.P9e6UJszfCM4zCM_r8-Y7Q";
-            var map = new mapboxgl.Map({
-                container: "map",
-                style: "mapbox://styles/mapbox/streets-v11",
-                zoom: 3,
-                center: [-74.2179,43.2994]
-            });
-            // Add Navigation Control
-            map.addControl(new mapboxgl.NavigationControl());
-            // Custom Zoom Functions
-            function zoomIn() {
-                map.zoomIn();
-            }
-            function zoomOut() {
-                map.zoomOut();
-            }
-        </script>
+         
 
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
