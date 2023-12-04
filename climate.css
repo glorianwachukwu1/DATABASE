@@ -72,8 +72,9 @@ body {
 #weather-table {
     margin: auto; /* Center the table */
     border-collapse: collapse; /* Add table lines */
-    width: 80%; /* Adjust the width as needed */
+    width: 50%; /* Adjust the width as needed */
     margin-top: 20px; /* Add some top margin for better spacing */
+    background-color: #101010;
 }
 
 #weather-table th, #weather-table td {
@@ -115,12 +116,7 @@ section.footer {
     text-align: center;
 }
 
-/**for the checkbox design/
-.text-warning label {
-    display: inline-block;
-    margin-right: 10px; /* Adjust spacing between checkboxes if needed */
-  }
-  
+
 
 
 /* Media query for smaller screens */
@@ -128,5 +124,5 @@ section.footer {
     body {
         font-size: 14px;
     }
-    /* Add additional responsive styles as needed */
+ 
 }
