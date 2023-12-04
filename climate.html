@@ -1,188 +1,128 @@
-<!DOCTYPE html>
- <html lang="en">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="climate.css"> 
+body {
     
-    <title>Climate Database</title>  
- </head>
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 14px;
+    flex-direction: column;
+    display: block;
+    overflow:auto; /* Prevent scrolling */
+    color: #4c3572;
+    background-image: url('https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
- <body>
-    <!-- nav bar -->
-    <section>
-        <nav class="navbar navbar-dark custom-dark-bg">
-            <a class="navbar-brand" href="#">
-                <img src="./images/logo black_colour.png" alt="Climate logo" width="70" height="40" class="d-inline-block align-top" alt="">
-                Climate Database Interface
-            </a>
-        </nav>
-    </section>
-
-
-
-    <!—Weather Info starts here -->
-    <section class="p-5">
-      <div class="container">
-        <div class="row gap-3">
-          
-         <div class="row col-lg-12 bg-dark d-flex align-items-center justify-content-around text-center rounded">
-            
-          <div class="col-md mb-4 mt-4">
-            <img src="./images/radiation.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
-            <p class="h6 text-light pt-3">Location</p>
-              <div class="text-warning">
-                 <select id="city-dropdown">
-                  <option value="select">Select Cities</option>
-                  <option value="Albany">Albany</option>
-                  <option value="Binghamton">Binghamton</option>
-                  <option value="Buffalo">Buffalo</option>
-                  <option value="Hempstead ">Hempstead </option>
-                  <option value="Mount Vernon">Mount Vernon</option>
-                  <option value="New Rochelle">New Rochelle</option>
-                  <option value="New York City">New York City</option>
-                  <option value="Rochester">Rochester</option>
-                  <option value="Schenectady">Schenectady</option>
-                  <option value="Syracuse">Syracuse</option>
-                  <option value="Troy">Troy</option>
-                  <option value="Utica">Utica</option>
-                  <option value="White Plains">White Plains</option>
-                </select>        
-                
-                              </div>
-            </div>
+    
+}
 
 
-                <div class="col-md mb-4 mt-4 ">
-                  <img src="./images/result.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
-                  <p class="h6 text-light pt-3">Weather</p>
-                  <div class="text-warning">
-                    <label for="startYear">Stats:</label>
-                    <select id="Day">
-                     <option value="Select">Select</option>
-                     <option value="Minumum">Minumum</option>
-                     <option value="Maximum">Maximum</option>
-                     <option value="Average">Average</option>
-                     </select> 
-                          
-                    </div>
+.custom-dark-bg {
+    background-color: #33333366; /* Replace #333 with your desired dark color */
+    color: #fff; /* Set text color to white or another contrasting color */
+}
 
-                    
-                    <label class="white-text">
-                      <input type="checkbox" value="Humidity" id="humidity-checkbox"> Humidity
-                  </label>
-                  <label class="white-text">
-                      <input type="checkbox" value="Temperature" id="temperature-checkbox"> Temperature
-                  </label>
-                  <br>
-                  <label class="white-text">
-                      <input type="checkbox" value="Windspeed" id="windspeed-checkbox"> Windspeed
-                  </label>
-                  
-                  <label class="white-text">
-                      <input type="checkbox" value="Solarradiance" id="solarradiance-checkbox"> Solar radiance
-                  </label>
-                                        
-                  <label class="white-text">
-                    <input type="checkbox" value="Precipitation" id="Precipitation"> Precipitation
-                </label>  
-                              
+.Location-container,
+.Solar-container,
+.Weather-container {
+    background-color: #8b96a1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    color: #ffffff;
+}
 
-                 
-                 </div>
+.white-text {
+    color:#e0e0e0;
 
-                 <div class="col-md mb-4 mt-4">
-                  <img src="./images/2weather.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
-                  <p class="h6 text-light pt-3">Data range</p>
-                  <div class="text-warning">
-                      <input type="radio" id="DateMonthly" name="Date" value="Monthly">
-                      <label for="DateMonthly">Monthly</label>
-                      
-                      <input type="radio" id="DateYearly" name="Date" value="Yearly">
-                      <label for="DateYearly">Yearly</label>
+}
 
-                              <!--  for the year dropdown -->
-                              <select id="monthly-dropdown" >
-                                <option value="select">select</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                <option value="2022">2022</option>
-                              
-                              </select>        
-                      </div>
-                  </div>
-                 
-        </div>
-      </div>
-    </section>
-    <!--Weather info ends here -->
+.result-container {
+    display: none;
+}
+
+
+
+
+/* Add the following CSS styles to make text yellow and headings bold */
+#weather-table th, #weather-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    color: yellow; /* Set text color to yellow */
+}
+
+#weather-table th {
+    background-color: #f2f2f2;
+    font-weight: bold; /* Make headings bold */
+}
+
+
+/*
+/* Add the following CSS styles to center the table and add table lines */
+#weather-table {
+    margin: auto; /* Center the table */
+    border-collapse: collapse; /* Add table lines */
+    width: 50%; /* Adjust the width as needed */
+    margin-top: 20px; /* Add some top margin for better spacing */
+    background-color: #101010;
+}
+
+#weather-table th, #weather-table td {
+    border: 1px solid #ddd; /* Add borders to cells */
+    padding: 8px; /* Add padding to cells */
+    text-align: center; /* Center text within cells */
+}
+
+/* Optional: Style the header cells differently */
+#weather-table th {
+    background-color: #101010;
+}
+
+
+#monthly-dropdown {
+    display: none; 
+    margin: auto; /* Center horizontally */
+    width: 30%; 
+}
+
+/* Show the monthly dropdown when the Monthly option is selected */
+#DateMonthly:checked~#monthly-dropdown {
+    display: block;
+    justify-content: center;
+   
+}
 
 
 
 
 
 
-      <!-- Display Weather Result -->
-    <section class="p-2 text-center">
-      <button placeholder="getWeather" id="add">Get Weather</button>
-      <div class="Result-container white-text" id="getWeatherResultContainer"> 
-        <!-- Result content for Get Weather button will be displayed here -->
-       
-        <table id="weather-table">
-          <thead>
-              <tr>
-                  <th>Date</th>
-                  <th>Temperature (°C)</th>
-                  <th>Wind Speed (m/s)</th>
-                  <th>Humidity (%)</th>
-                  <th>Precipitation (mm)</th>
-                  <th>Solar Irradiance (W/m²)</th>
-              </tr>
-          </thead>
-          <tbody id="weather-result"></tbody>
-      </table>
-    </div>
-    </section>
+/* Footer section */
+section.footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
 
+
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
  
-
-
-    
-<br>
-<br>
-
-      <!-- Footer section ends here -->
-      <section class="p-3 bg-dark">
-          <div class="container">
-            <div class="d-flex align-items-center justify-content-around">
-              <div class="text-light d-flex row">
-                <p>  &copy; 2023 Gloria, Patrick, Harris - <a href="" class="link-warning link-underline-opacity-0">Database Course </a> </p></div>
-              <div class="text-warning">
-                <i class="bi bi-facebook"></i> &nbsp;
-                <i class="bi bi-twitter"></i> &nbsp;
-                <i class="bi bi-instagram"></i> &nbsp;
-                <i class="bi bi-whatsapp"></i> &nbsp;
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Footer section ends here -->
-        
-         
-
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-          crossorigin="anonymous"></script>
-          <script src="climate.js"></script>
-  </body>
-</html>
-
+}
