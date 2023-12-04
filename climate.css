@@ -18,6 +18,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    
 }
 
 
@@ -86,8 +88,32 @@ body {
 }
 
 
+#monthly-dropdown {
+    display: none; 
+    margin: auto; /* Center horizontally */
+    width: 30%; 
+}
+
+/* Show the monthly dropdown when the Monthly option is selected */
+#DateMonthly:checked~#monthly-dropdown {
+    display: block;
+    justify-content: center;
+   
+}
 
 
+
+
+
+
+/* Footer section */
+section.footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
 
 /**for the checkbox design/
 .text-warning label {
