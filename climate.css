@@ -5,13 +5,14 @@
 }
 
 body {
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: left;
     margin-top: 20px;
     font-size: 14px;
     flex-direction: column;
     display: block;
-    overflow: auto;
+    overflow:auto; /* Prevent scrolling */
     color: #4c3572;
     background-image: url('https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-size: cover;
@@ -21,8 +22,8 @@ body {
 
 
 .custom-dark-bg {
-    background-color: #33333366; 
-    color: #fff; 
+    background-color: #33333366; /* Replace #333 with your desired dark color */
+    color: #fff; /* Set text color to white or another contrasting color */
 }
 
 .Location-container,
@@ -43,22 +44,63 @@ body {
 
 }
 
-
-#map {
-    border: 2px solid #9c8f8f; 
-    margin: 10px; 
-}
-
-
-
 .result-container {
     display: none;
 }
 
 
+
+
+/* Add the following CSS styles to make text yellow and headings bold */
+#weather-table th, #weather-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    color: yellow; /* Set text color to yellow */
+}
+
+#weather-table th {
+    background-color: #f2f2f2;
+    font-weight: bold; /* Make headings bold */
+}
+
+
+/*
+/* Add the following CSS styles to center the table and add table lines */
+#weather-table {
+    margin: auto; /* Center the table */
+    border-collapse: collapse; /* Add table lines */
+    width: 80%; /* Adjust the width as needed */
+    margin-top: 20px; /* Add some top margin for better spacing */
+}
+
+#weather-table th, #weather-table td {
+    border: 1px solid #ddd; /* Add borders to cells */
+    padding: 8px; /* Add padding to cells */
+    text-align: center; /* Center text within cells */
+}
+
+/* Optional: Style the header cells differently */
+#weather-table th {
+    background-color: #101010;
+}
+
+
+
+
+
+/**for the checkbox design/
+.text-warning label {
+    display: inline-block;
+    margin-right: 10px; /* Adjust spacing between checkboxes if needed */
+  }
+  
+
+
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     body {
         font-size: 14px;
     }
-   
+    /* Add additional responsive styles as needed */
 }
