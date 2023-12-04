@@ -32,8 +32,8 @@
           
          <div class="row col-lg-12 bg-dark d-flex align-items-center justify-content-around text-center rounded">
             
-           <div class="col-md mb-1 mt-4 ">
-            <img src="./images/resultt.jpg" alt="staff1" class="img-fluid rounded-circle" width="200" height="200">
+          <div class="col-md mb-4 mt-4">
+            <img src="./images/radiation.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
             <p class="h6 text-light pt-3">Location</p>
               <div class="text-warning">
                  <select id="city-dropdown">
@@ -58,7 +58,7 @@
 
 
                 <div class="col-md mb-4 mt-4 ">
-                  <img src="./images/radiation.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
+                  <img src="./images/result.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
                   <p class="h6 text-light pt-3">Weather</p>
                   <div class="text-warning">
                     <label for="startYear">Stats:</label>
@@ -95,48 +95,44 @@
                  
                  </div>
 
-                  <div class="col-md mb-4  mt-4">
-                    <img src="./images/location.jpg" class="img-fluid rounded-circle" width="200" height="200">
-                    <p class="h6 text-light pt-3">Data range</p>
-                    <div class="text-warning">
-                       <select id="Date" onchange="updateYearDropdown()">
-                       <option value="Monthly">Monthly</option>
-                       <option value="Yearly">Yearly</option>
-
-
-                      </select>
-                      <select id="monthly-dropdown"style="display:none;">
-                        <option value="select">select</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
+                 <div class="col-md mb-4 mt-4">
+                  <img src="./images/2weather.jpg" alt="image" class="img-fluid rounded-circle" width="200" height="200">
+                  <p class="h6 text-light pt-3">Data range</p>
+                  <div class="text-warning">
+                      <input type="radio" id="DateMonthly" name="Date" value="Monthly">
+                      <label for="DateMonthly">Monthly</label>
                       
-                      </select>        
+                      <input type="radio" id="DateYearly" name="Date" value="Yearly">
+                      <label for="DateYearly">Yearly</label>
 
-                      <!--  div for the year dropdown -->
-                      <div id="yearDropdownContainer"></div>
-                      <div id="dateRangeDropdownContainer"></div>
-                    </div>
+                              <!--  for the year dropdown -->
+                              <select id="monthly-dropdown" >
+                                <option value="select">select</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                              
+                              </select>        
+                      </div>
                   </div>
-
-
-
-
-
-                  
+                 
         </div>
       </div>
     </section>
     <!--Weather info ends here -->
 
 
+
+
+
+
       <!-- Display Weather Result -->
-    <section class="p-3 text-center">
+    <section class="p-2 text-center">
       <button placeholder="getWeather" id="add">Get Weather</button>
       <div class="Result-container white-text" id="getWeatherResultContainer"> 
         <!-- Result content for Get Weather button will be displayed here -->
@@ -161,8 +157,8 @@
 
 
     
-
-
+<br>
+<br>
 
       <!-- Footer section ends here -->
       <section class="p-3 bg-dark">
