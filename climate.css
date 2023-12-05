@@ -51,10 +51,14 @@ body {
 }
 
 
+#getWeatherResultContainer,
+#getStatsResultContainer {
+    display: none;
+}
 
 
 /* Add the following CSS styles to make text yellow and headings bold */
-#weather-table th, #weather-table td {
+#weather-table th, #weather-table td, #weather-table-getstats {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
@@ -69,7 +73,7 @@ body {
 
 /*
 /* Add the following CSS styles to center the table and add table lines */
-#weather-table {
+#weather-table, #weather-table-getstats{
     margin: auto; /* Center the table */
     border-collapse: collapse; /* Add table lines */
     width: 50%; /* Adjust the width as needed */
@@ -77,7 +81,7 @@ body {
     background-color: #101010;
 }
 
-#weather-table th, #weather-table td {
+#weather-table th, #weather-table td, #weather-table-getstats th, #weather-table-getstats td {
     border: 1px solid #ddd; /* Add borders to cells */
     padding: 8px; /* Add padding to cells */
     text-align: center; /* Center text within cells */
@@ -102,8 +106,20 @@ body {
    
 }
 
+weather-table-getstats{
+    font-size: x-large;
 
+}
 
+#weather-getstats{
+    background-color: #101010;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 8px;
+    text-align: center;
+    color: yellow; /* Set text color to yellow */
+    
+}
 
 
 
